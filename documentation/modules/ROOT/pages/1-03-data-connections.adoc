@@ -1,22 +1,18 @@
-= 1.3 Object Storage with Data Connections
+= 1.3 Storing data with data connections
 
 include::_attributes.adoc[]
 
 xref:index.adoc[Back to the introduction]
 
-== Data Connections
+For this workshop, you need S3-compatible object storage, such as Ceph, Minio, or AWS S3, to store the data and models. To access the data and models, you create data connections, resources that contain the configuration parameters that are required to connect to an object storage bucket.
 
-We will be using S3 compatible object storage, such as Ceph, Minio, or AWS S3, to store the data and models used in this workshop. To access the data and models, we will use a Data Connection, which is a resource that contains the configuration parameters required to connect to an object storage bucket.
+You need the following two storage buckets:
 
-We will need 2 buckets.  
+* *My Storage* - Use this bucket for storing your models and data. You can reuse this bucket and its connection for your notebooks and model servers.  
+*  *Pipelines Artifacts* - Use this bucket as storage for your pipeline artifacts. A pipeline artifacts bucket is required when you create a pipeline server.  For this workshop, we create this bucket to separate it from the first storage bucket for clarity.
 
-1. *My Storage* - Personal use for models and data.  We can reuse that bucket and connection for notebooks and model servers.  
-2. *Pipelines Artifacts* - This is used as storage for your pipeline artifacts and required when creating a pipeline server.  We'll keep it separate from the first bucket for clarity.
+You have two options for creating these storage buckets:
 
-You can choose to:
+* If you want to use your own S3-compatible object storage buckets, create data connections to  them as described in xref:1-03-01-data-connections-manual.adoc[Creating data connections to your own S3-compatible object storage].
 
-* Create connections to your own S3 compatible object storage.  Click here for instructions on how to do that: xref:1-03-01-data-connections-manual.adoc[Manually Adding Data Connections]
-
-OR
-
-* Use an automated script to install object storage locally for the purposes of this workshop: xref:1-03-02-data-connections-script.adoc[Scripted installation of local Minio instance]
+* If you want to run a script that installs local Minio storage buckets and creates data connections to them, for the purposes of this workshop, follow the steps in xref:1-03-02-data-connections-script.adoc[Running a script to install local object storage buckets and create data connections].

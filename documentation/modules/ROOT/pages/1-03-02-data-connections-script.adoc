@@ -1,41 +1,56 @@
-= 1.3.2 Scripted Data Connection Installation
+= 1.3.2 Running a script to install local object storage buckets and create data connections
 
 include::_attributes.adoc[]
 
 xref:index.adoc[Back to the introduction]
 
+For convenience, the provided script installs two data connections (and associated secrets) and two Minio buckets as s3-compatible storage The script creates a random user and password for security.    This script is based on the instructions for installing Minio in this https://ai-on-openshift.io/tools-and-applications/minio/minio/[guide]. 
 
-NOTE: This script will install two data connections and two Minio buckets as s3 compatible storage into your data science project for convenience.  These are *not* meant for production usage.  It is based on the instructions for installing Minio in this https://ai-on-openshift.io/tools-and-applications/minio/minio/[guide]. It will create a random user and password for security.  If you wish to connect to your own storage, please refer to these instructions: xref:1-03-01-data-connections-manual.adoc[Manually Adding Data Connections] 
+IMPORTANT: The storage buckets that this script creates are *not* meant for production usage. 
 
-== Finding the OpenShift Project Name
-
-We're going to want to update the project we created in the previous section.  To do that, we need to navigate to the project in the OpenShift Console.  First, we must take note of the project resource name when we created it.
-
-image::projects/ds-project-new-form-resource.png[New Project Form Resource Name]
-
-You can also find the resource name on your list of projects by hovering over the *?* icon next to the project name.
-
-image::projects/ds-project-list-resource-hover.png[Project List Resource Name]
+Note: If you want to connect to your own storage, see xref:1-03-01-data-connections-manual.adoc[Creating data connections to your own S3-compatible object storage].
 
 
-== Navigate to the OpenShift Project
+== Get your data science project's resource name.
 
-NOTE: This section details how to start an OpenShift job to install the s3 compatible storage and associated data connection secrets.  If you are knowledgeable in OpenShift and can access the cluster from the command line, you can simply execute `oc apply -n <your-project-name/> -f https://github.com/cfchase/fraud-detection-notebooks/raw/main/setup/setup-s3.yaml`.
+You must know the OpenShift resource name for your data science project so that you run the provided script in the correct project. 
 
-Now that we have the resource name, we can navigate to the project in the OpenShift Console.  Click on the *OpenShift Console* link in the application switcher top right corner of the OpenShift Web Console.
+1. In the OpenShift Data Science dashboard, select *Data Science Projects* to view the list of projects.
 
+2. Hover your cursor over the *?* icon next to the project name. A text box appears with information about the project.
++
+image::projects/ds-project-list-resource-hover.png[Project list resource name]
+
+3. Make a note of the project's resource name.
+
+== Run the script from the command line
+
+If you are knowledgeable in OpenShift and can access the cluster from the command line, run the following command:
+----
+oc apply -n <your-project-name/> -f https://github.com/cfchase/fraud-detection-notebooks/raw/main/setup/setup-s3.yaml
+----
+
+== Run the script from the OpenShift console
+
+. In the OpenShift Data Science dashboard, click the application launcher icon and then select the *OpenShift Console* option.
++
 image::projects/ds-project-ocp-link.png[OpenShift Console Link]
 
-* Click the *+* icon in the navbar to create new resources.
-
-image::projects/ocp-console-add-icon.png[Add Resources Icon]
+. In the OpenShift console, click *+* in the top navigation bar.
++
+//update ocp-console-add-icon.png to highlight the + icon
+image::projects/ocp-console-add-icon.png[Add resources Icon]
  
-* Select your project from the list of projects and verify the correct project is now listed.
+. Select your project from the list of projects.
++
+image::projects/ocp-console-select-project.png[Select a project]
 
-image::projects/ocp-console-select-project.png[Select Project]
+. Verify that you selected the correct project.
++
+image::projects/ocp-console-project-selected.png[Selected project]
 
-image::projects/ocp-console-project-selected.png[Project Selected]
-
+. Copy the following code and paste it into the *Import YAML* editor.
++
 [.lines_space]
 [.console-input]
 [source, yaml]
@@ -82,14 +97,12 @@ spec:
       serviceAccountName: demo-setup
 ----
 
+. Click *Create*.
 
-== Data Connections
+.Verification 
 
-We will be using S3 compatible object storage, such as Ceph, Minio, or AWS S3, to store the data and models used in this workshop. To access the data and models, we will use a Data Connection, which is a resource that contains the configuration parameters required to connect to an object storage bucket.
+You should see a "Resources successfully created" message and the following resources listed:
 
-We will need 2 buckets.  
-
-1. *My Storage* - Personal use for models and data.  We can reuse that bucket and connection for notebooks and model servers.  
-2. *Pipelines Artifacts* - This is used as storage for your pipeline artifacts and required when creating a pipeline server.  We'll keep it separate from the first bucket for clarity.
-
-You can choose to use your own object storage and learn how to configure it manually 
+* demo-setup
+* demo-setup-edit
+* create s3-storage

@@ -1,28 +1,32 @@
-= 1.4 Enable Data Science Pipelines
+= 1.4 Enabling data science pipelines
 
 include::_attributes.adoc[]
 
 xref:index.adoc[Back to the introduction]
 
-This section will prepare your workspace for Section $ xref:4-01-gui-pipelines.adoc[Data Science Pipelines].  You can do this now to save time later, but you can also skip and return to this section.
+In this section, you prepare your workspace for Section $ xref:4-01-gui-pipelines.adoc[Data Science Pipelines].
 
 NOTE: If you do not intend to complete the pipelines section of the workshop you can skip this step and move on to the next section, xref:2-01-create-workbench.adoc[Create a Workbench]
 
-== Create a Pipeline Server
 
-* Click *Create pipeline server*
+. In the Data Science dashboard, navigate to *Data Science Pipelines* -> *Pipelines*.
 
+. Click *Create pipeline server*.
++
 image::projects/ds-project-create-pipeline-server.png[Create pipeline server button]
 
-* Select the `Pipeline Artifacts` data connection.
-
+. Under *Existing data connections*, select *Pipeline Artifacts* from the *Name* list.
++
 image::projects/ds-project-create-pipeline-server-form.png[Selecting the Pipeline Artifacts data connection]
 
-* Leave the database configuration as the default.
+. Leave the database configuration as the default.
 
-* Click *Configure*.
+. Click *Configure*.
 
-Pipelines should now be enabled for your project and the *Create pipeline server* button should disappear.
+.Verification
 
+Check the *Pipelines* page. Pipelines are enabled when the *Pipeline server actions* option appears and the *Create pipeline server* button no longer appears.
+
+//update image to show the *Pipeline server actions* option 
 image::projects/ds-project-create-pipeline-server-complete.png[Create pipeline server complete]
 
