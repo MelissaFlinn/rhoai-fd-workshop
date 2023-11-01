@@ -5,22 +5,22 @@ include::_attributes.adoc[]
 xref:index.adoc[Back to the introduction]
 
 
-. After logging into the OpenShift console, access the OpenShift Data Science dashboard by clicking the application launcher.
+. After you log into the OpenShift console, access the OpenShift Data Science dashboard by clicking the application launcher.
 +
-image::projects/ocp-console-ds-tile.png[Data Science Dashboard link]
+image::projects/ocp-console-ds-tile.png[Data Science dashboard link]
 
 . When prompted, log in to the OpenShift Data Science dashboard by using your OpenShift credentials. OpenShift Data Science uses the same credentials as OpenShift for the dashboard, notebooks, and all other components.
 +
-image::projects/login-with-openshift.png[OpenShift Login, 300]
+image::projects/login-with-openshift.png[OpenShift login, 300]
 +
 The OpenShift Data Science dashboard shows the status of any installed and enabled applications.
 
 . Click *Explore* if you want to view other available application integrations.
 +
-image::projects/dashboard-enabled.png[Dashboard Enabled]
+image::projects/dashboard-enabled.png[Dashboard enabled]
 
-. You can navigate back to the OpenShift console in a similar fashion. Click on the application launcher to access the OpenShift console.
-+
-image::projects/ds-console-ocp-tile.png[OCP Console Link]
+Note: You can navigate back to the OpenShift console in a similar fashion. Click on the application launcher to access the OpenShift console.
+
+image::projects/ds-console-ocp-tile.png[OCP console link]
 
 For now, stay in the OpenShift Data Science dashboard so that you can move on to the next step: creating a project.

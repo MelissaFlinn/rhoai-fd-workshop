@@ -6,9 +6,13 @@ xref:index.adoc[Back to the introduction]
 
 NOTE: If you do not have your own s3 compatible storage, or if you want to use a disposable local Minio instance, skip this page and follow the steps in xref:1-03-02-data-connections-script.adoc[Running a script to install local object storage buckets and create data connections].
 
+.Prerequisites
+
 To create data connections to your existing S3-compatible storage bucket, you need all the credential information for the storage bucket. including the endpoint URL, access key, secret key, region, and bucket name. If you don't have this information, contact your storage administrator.
 
-== Create a data connection for saving your data
+.Procedures
+
+== Create a data connection for saving your data and models
 
 . In the OpenShift Data Science dashboard, navigate to the page for your Data science project.
 
@@ -36,6 +40,9 @@ image::projects/ds-project-pipeline-artifacts-form.png[Add pipeline artifacts fo
 
 . Click *Add data connection*.
 
-. Check to see that your data connections are listed in the project.
+
+.Verification
+
+Check to see that your data connections are listed in the project.
 +
 image::projects/ds-project-dc-list.png[List of project data connections]

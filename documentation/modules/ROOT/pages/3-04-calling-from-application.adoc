@@ -1,135 +1,142 @@
-= 2.4 Calling the API from an Application
+= 2.4 Calling the API from an application
 
 include::_attributes.adoc[]
 
-Now that we have a working API serving predictions, we can call it from an application.
+Now that you have a working API that serves predictions, you can call it from an application.
 
-Until now, we have been using a route which exposes the service externally.  Sometimes, services don't expose themselves outside the cluster.  We'll deploy an application to the same project and can refer to it using its internal service name.
+You deploy an application to the same project (that contains the data model) and refer to the application by using its internal service name.
 
-== Verify your service URL
+//need to provide an additional resource for info on using a route which exposes the service externally outside the cluster. 
 
-If you followed previous naming instructions, your service should be `http://object-detection-rest:8080`.  You can verify your rest service's name and port on the service detail screen.
+. Verify the REST service's name and port.
++
+If you followed the naming instructions in the `2_save_model.ipynb` file, as directed in xref:3-01-save-model.adoc[3.4 Preparing the model for deployment], the REST service URL is `http://object-detection-rest:8080`. 
 
-* From the project topology, open your deployment's detail screen. Check the service *name* and *port*.
-Your internal URL will be `http://<service-name>:<service-port>`
+.. In the Data Science dashboard, select *Topology*. 
 
+.. Open your deployment's detail screen. Check the service *name* and *port*.
++
+The internal URL should be `http://<service-name>:<service-port>`
++
 image::s2i/topology-rest-service.png[alt text, 700]
 
-== Create the Front End Application
-
-There are two options for creating the Front End Application. If you have time you can build this
-NodeJS app from source like we did for the REST API. If however you are in a rush we can run
-the application from a pre-built container which is much *faster*.
-
-[tabs, subs="attributes+,+macros"]
-====
-
-Use pre-built container::
+. Create the front end application.
 +
---
-We will create the test app using a pre-built container from a public container registry
+You have two options for creating the front end application, depending on how quickly you want to do it:
 
-From the `+Add` menu, click on the `Container images` tile:
+* If you have time, you can build the application from source code, like you did for the REST API. 
 
+* If you want to do it quickly, you can run the application from a pre-built container.
+
+
+Using a pre-built container::
+
+You can create the front end application by using a pre-built container from a public container registry.
++
+.. In the Data Science dashboard, select *+Add* and then click the *Container images* tile:
++
 image::s2i/from-container-image.png[alt text, 800]
 
-Set the container location in the ``Image name``field, enter: `+quay.io/agroom/object-detection-app+`.
-
+.. For *Image name*, enter the location of the container:
++
 [.lines_space]
 [.console-input]
 [source,text]
 ----
 quay.io/agroom/object-detection-app
 ----
-
-image::s2i/deploy-image.png[alt text, 800]
-
-If you've entered the correct repository it will be marked as *validated* You can optionally set the
-runtime icon from something other than OpenShift, in the example screen *nodejs* was chosen.
-
---
-
-Build from source::
 +
---
-We will create the test app the exact same way we created the REST service, but instead, we'll be creating an `object-detection-app`
+image::s2i/deploy-image.png[alt text, 800]
++
+If you've entered the correct repository it is marked as *validated*.
 
-From the `+Add` menu, click on the `Import from Git` tile:
+.. Optionally, you can set the runtime icon from something other than OpenShift, in the example screen *nodejs* was chosen.
+//is this the deploy-image.png ?
 
+Using Git source code::
+
+You can build the the front end application by building it from `Node.js` source code.
+
+.. Select *+Add* and then click *Import from Git*.
++
 image::s2i/from-git.png[alt text, 800]
 
-Now set the Git repo ``Git Repo URL``field, enter: `+https://github.com/rh-aiservices-bu/object-detection-app.git+`.
-
+.. For *Git Repo URL* enter:
++
 [.lines_space]
 [.console-input]
 [source,text]
 ----
 https://github.com/rh-aiservices-bu/object-detection-app.git
 ----
-If you've entered the correct repository, the Node.js builder image will be selected since this front end application was written in Node.js.
-
-
++
+If you entered the correct repository, the `Node.js` builder image is selected because the front end application is written in `Node.js`.
++
 image::s2i/git-repo-app.png[alt text, 800]
---
-====
 
-== Configuring the application
 
-Don't hit that *Create* button just yet. We have to configure the runtime aspects of the application, this is then the
-same regardless of whether it came from source or a container.
+. Configure the runtime aspects of the application.
 
-=== Set the App Name
-
-* By default, our new deployment will be added to the existing application `object-detection` we created during our previous app.  We can leave that as is.  Instead of `object-detection-app-git`, we can change the *Name* to  `object-detection-app`, but it's not required.
-
+.. By default, the new deployment is added to the existing application `object-detection` that you created previously. You can leave that as is.  
+.. Optionally, you can change the *Name* from `object-detection-app-git` to  `object-detection-app`.
++
 image::s2i/general-app.png[alt text, 700]
 
-=== Route
-For the detection application we want a *secure https* Route so we will use the default - so no changes required.
+. For the route, accept the default *secure https* route.
 
-=== Configure the Deployment Environment Variables
+. Configure the deployment environment variables
++
+The application needs to know where to send its images for predictions. Previously, you confirmed the service URL of the `object-detection-rest` deployment.  You can use that value and add `/predictions`.  This URL instructs the front end application where to send the images by setting the `OBJECT_DETECTION_URL` variable to `http://<service-name>:<service-port/predictions`.
 
-The application needs to know where to send its images for predictions. Earlier, we confirmed the service URL of the `object-detection-rest` deployment.  We'll use that value and add `/predictions`.  This will tell our front end application where to send the images by setting the variable `OBJECT_DETECTION_URL` to `http://<service-name>:<service-port/predictions`.
-
-* Open the *Deployment*  options to set an environment variable:
-
+.. Open the *Deployment*  options to set an environment variable:
++
 image::s2i/create-app-deployment.png[alt text, 700]
 
-* Under *Environment variables (runtime only)*, create a Name / Value pair.
-
+.. Under *Environment variables (runtime only)*, create the following Name / Value pair:
++
 Name:
++
 [.lines_space]
 [.console-input]
 [source,text]
 ----
 OBJECT_DETECTION_URL
 ----
++
 Value:
++
 [.lines_space]
 [.console-input]
 [source,text]
 ----
 http://object-detection-rest:8080/predictions
 ----
-NOTE: If you named the rest services `object-detection-rest`, this value should be `http://object-detection-rest:8080/predictions`.  If not, used the observed value.
-
++
+NOTE: If you named the REST service `object-detection-rest`, this value should be `http://object-detection-rest:8080/predictions`.  If not, use the value.
+//use the value fo rwhat?
++
 image::s2i/create-app-env-var.png[alt text, 800]
 
-=== Create
-
-* Scroll down and click on *Create*:
-
+. Scroll down and then click *Create*:
++
 image::s2i/create-button.png[alt text]
 
-== Checking your Application
+.Verification
 
-You can see a new application has been created and is currently building.  Like before, wait for the build to complete and pods to deploy.
+You can see a new application has been created and is currently building. 
 
+. Wait for the build to complete and for the pods to deploy.
++
 image::s2i/topology-app.png[alt text, 800]
 
-After the application is deployed to OpenShift click on the Route URL to launch the application.
-Try it out from your laptop or phone with a camera.
+. After the application is deployed to OpenShift, click the Route URL to launch the application.
 
-NOTE: If you don't want to type that long Route URL into your phone browser, try converting it into a QR code for your smartphone, for instance with https://www.qr-code-generator.com[QR code generator].
+. Try it from your laptop or from a phone with a camera.
++
+NOTE: Optionally, if you don't want to type that long Route URL into your phone's browser, you can convert the URL into a QR code by using a QR code generator, for example: https://www.qr-code-generator.com[QR code generator].
 
-Return here if you're ready to move on to xref:3-01-running-the-model-offline.adoc[offline scoring].
+. Return here when you're ready to continue with the workshop.
+
+.Next steps
+
+xref:3-01-running-the-model-offline.adoc[offline scoring].

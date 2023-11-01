@@ -8,6 +8,7 @@ In this section, you prepare your workspace for Section $ xref:4-01-gui-pipeline
 
 NOTE: If you do not intend to complete the pipelines section of the workshop you can skip this step and move on to the next section, xref:2-01-create-workbench.adoc[Create a Workbench]
 
+.Procedure
 
 . In the Data Science dashboard, navigate to *Data Science Pipelines* -> *Pipelines*.
 

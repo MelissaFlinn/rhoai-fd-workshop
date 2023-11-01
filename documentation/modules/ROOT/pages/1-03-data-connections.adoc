@@ -13,6 +13,6 @@ You need the following two storage buckets:
 
 You have two options for creating these storage buckets:
 
-* If you want to use your own S3-compatible object storage buckets, create data connections to  them as described in xref:1-03-01-data-connections-manual.adoc[Creating data connections to your own S3-compatible object storage].
+* If you want to use your own S3-compatible object storage buckets, create data connections to them as described in xref:1-03-01-data-connections-manual.adoc[Creating data connections to your own S3-compatible object storage].
 
 * If you want to run a script that installs local Minio storage buckets and creates data connections to them, for the purposes of this workshop, follow the steps in xref:1-03-02-data-connections-script.adoc[Running a script to install local object storage buckets and create data connections].

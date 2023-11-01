@@ -4,12 +4,13 @@ include::_attributes.adoc[]
 
 xref:index.adoc[Back to the introduction]
 
-
-Before you begin, make sure that you are logged into *Red Hat OpenShift Data Science* and you can see the dashboard, that looks like this:
+Before you begin, make sure that you are logged into *Red Hat OpenShift Data Science* and that you can see the dashboard:
 
 image::projects/dashboard-enabled.png[Dashboard Enabled]
 
 Note that you can start a Jupyter notebook from here, but it would be a one-off notebook run in isolation.  To do data science as part of a workflow, you must create a data science project. Projects allow you and your team to organize and collaborate on resources within separated namespaces. From a project you can create multiple workbenches, each with their own Jupyter notebook environment, and each with their own data connections and cluster storage. In addition, the workbenches can share models and data with pipelines and model servers.
+
+.Procedure 
 
 . From the left menu, navigate to *Data Science Projects*. Here you can see the list of existing projects that you have access to.
 +

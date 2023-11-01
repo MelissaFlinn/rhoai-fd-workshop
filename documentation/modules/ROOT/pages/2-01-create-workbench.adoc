@@ -1,51 +1,57 @@
-= 2.1 Starting a Jupyter environment
+= 2.1 Creating a workbench and selecting a Notebook image
 
 include::_attributes.adoc[]
 
-NOTE: This section assumes you created a `My Storage` data connection xref:1-03-data-connections.adoc[as described in section 1.3].
+A workbench is an instance of your development and experimentation environment. Within the workbench you can select a notebook image for your data science work.
 
+.Prerequisite
 
-== Create a Workbench
+* You created a `My Storage` data connection xref:1-03-data-connections.adoc[as described in section 1.3].
 
-In section 1, we created a data science project.  From the project detail page
+.Procedure
 
-* Click the *Create workbench* button.
+. Navigate to the project detail page for the data science project that you created in Section 1.
 
+. Click the *Create workbench* button.
++
 image::workbenches/ds-project-create-workbench.png[Create workbench button]
 
-* Fill out the name and description.
+. Fill out the name and description.
++
+image::workbenches/create-workbench-form-name-desc.png[Workbench name and description, 600]
++
+Red Hat provides several supported notebook images. In the *Notebook image* section, you can choose one of these images or any custom images that an administrator has set up for you. The *Tensorflow* image which has the necessary libraries for this workshop.
 
-image::workbenches/create-workbench-form-name-desc.png[Workbench Name and Description, 600]
-
-Red Hat ships several notebook images that are built and supported.  The *Notebook image* section will allow you to choose one of these or any custom images an administrator has set up for you.  Today, we'll be using the *Tensorflow* image which has the necessary libraries for this workshop.
-
-* Choose the latest *Tensorflow* image.
-
+. Choose the latest *Tensorflow* image.
++
 image::workbenches/create-workbench-form-image.png[Workbench image, 600]
 
-* Choose a small deployment and no GPUs.  We won't need them for this workshop
-
+. Choose a small deployment and no GPUs. This workshop does not require GPUs.
++
 image::workbenches/create-workbench-form-size.png[Workbench size,600]
 
-* Leave the environment variables and storage options as the defaults.
+. Leave the default environment variables and storage options.
++
+image::workbenches/create-workbench-form-env-storage.png[Workbench storage, 600]
 
-image::workbenches/create-workbench-form-env-storage.png[Workbench Env Storage, 600]
+. Under *Data connections*, choose  *Use existing data connection* and select `My Storage` (the object storage that you configured previously) from the dropdown list.
++
+image::workbenches/create-workbench-form-data-connection.png[Data connection, 600]
 
-* Under *Data connections*, choose to *Use existing data connection* and choose `My Storage` from the dropdown.  This will allow us to access the object storage we configured previously.
-
-image::workbenches/create-workbench-form-data-connection.png[Data Connection, 600]
-
-* Click the *Create workbench* button.
-
+. Click the *Create workbench* button.
++
 image::workbenches/create-workbench-form-button.png[Create workbench button]
 
-You will be returned to your project while the workbench starts.  You'll see the status of the workbench change from `Starting` to `Running` next to the listed workbench.
+.Verification
 
+In the project details page, the status of the workbench changes from `Starting` to `Running`.
++
 image::workbenches/ds-project-workbench-list.png[Workbench list]
 
+NOTE: If you have made a mistake, you can stop the workbench and edit it to make changes.
 
-NOTE: *Editing a Workbench Configuration* if you have made a mistake you can simply stop the workbench and edit it to make changes.
+image::workbenches/ds-project-workbench-list-stop.png[Workbench list stop]
 
-image::workbenches/ds-project-workbench-list-stop.png[Workbench List Stop]
+image::workbenches/ds-project-workbench-list-edit.png[Workbench list edit]
 
-image::workbenches/ds-project-workbench-list-edit.png[Workbench List Edit]
+.Next step

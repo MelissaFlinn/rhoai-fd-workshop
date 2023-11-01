@@ -4,7 +4,7 @@ include::_attributes.adoc[]
 
 == The SDK
 
-While we've created a simple pipeline using the GUI pipeline editor, it's often desirable to create pipelines using code that can be version controlled and shared with others. The https://github.com/kubeflow/kfp-tekton[kfp-tekton] SDK provides a Python API for creating pipelines. The SDK is available as a Python package that can be installed using `pip install kfp-tekton`.  With this package, you can use Python code to create a pipeline and then compile it to Tekton YAML.  Then we can import that YAML into OpenShift AI.
+While we've created a simple pipeline using the GUI pipeline editor, it's often desirable to create pipelines by using code that can be version-controlled and shared with others. The https://github.com/kubeflow/kfp-tekton[kfp-tekton] SDK provides a Python API for creating pipelines. The SDK is available as a Python package that can be installed using `pip install kfp-tekton`.  With this package, you can use Python code to create a pipeline and then compile it to Tekton YAML.  Then we can import that YAML into OpenShift AI.
 
 If you'd like to browse the code to generate, you can find it in the `pipeline` directory in you `fraud-detection-notebooks` project you are using in your notebook.  Feel free to peruse the code.
 
