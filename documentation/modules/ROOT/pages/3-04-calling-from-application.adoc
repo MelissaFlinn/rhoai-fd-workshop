@@ -12,7 +12,7 @@ You deploy an application to the same project (that contains the data model) and
 +
 If you followed the naming instructions in the `2_save_model.ipynb` file, as directed in xref:3-01-save-model.adoc[3.4 Preparing the model for deployment], the REST service URL is `http://object-detection-rest:8080`. 
 
-.. In the Data Science dashboard, select *Topology*. 
+.. In the OpenShift console, select *Topology*. 
 
 .. Open your deployment's detail screen. Check the service *name* and *port*.
 +
@@ -57,7 +57,7 @@ Using Git source code::
 
 You can build the the front end application by building it from `Node.js` source code.
 
-.. Select *+Add* and then click *Import from Git*.
+.. In the Data Science dashboard, Select *+Add* and then click *Import from Git*.
 +
 image::s2i/from-git.png[alt text, 800]
 
@@ -135,8 +135,8 @@ image::s2i/topology-app.png[alt text, 800]
 +
 NOTE: Optionally, if you don't want to type that long Route URL into your phone's browser, you can convert the URL into a QR code by using a QR code generator, for example: https://www.qr-code-generator.com[QR code generator].
 
-. Return here when you're ready to continue with the workshop.
+. Return here when you're ready to continue with the {deliverable}.
 
 .Next steps
 
-xref:3-01-running-the-model-offline.adoc[offline scoring].
+xref:4-01-gui-pipelines.adoc[Automating workflows with data science pipelines]

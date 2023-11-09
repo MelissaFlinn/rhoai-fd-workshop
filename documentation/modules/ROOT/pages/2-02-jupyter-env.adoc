@@ -1,8 +1,8 @@
-= 2.2 Importing the workshop files into the Jupyter environment
+= 2.2 Importing the {deliverable} files into the Jupyter environment
 
 include::_attributes.adoc[]
 
-The Jupyter environment is a web-based environment, but everything you do inside it is happening on *Red Hat OpenShift Data Science* and powered by the *OpenShift* cluster. This means that, without having to install and maintain anything on your own computer, and without disposing of lots of local resources like CPU, GPU and RAM, you can conduct your Data Science work in this powerful and stable managed environment.
+The Jupyter environment is a web-based environment, but everything you do inside it is happening on *{productname-long}* and powered by the *OpenShift* cluster. This means that, without having to install and maintain anything on your own computer, and without disposing of lots of local resources like CPU, GPU and RAM, you can conduct your Data Science work in this powerful and stable managed environment.
 
 .Prerequisite
 
@@ -16,9 +16,9 @@ image::workbenches/ds-project-workbench-open.png[Open Workbench]
 +
 Your Jupyter environment window opens.
 +
-This file-browser window shows the files and folders that are saved inside your own personal space in OpenShift Data Science.
+This file-browser window shows the files and folders that are saved inside your own personal space in {productname-short}.
 
-. Bring the content of this workshop inside your Jupyter environment:
+. Bring the content of this {deliverable} inside your Jupyter environment:
 
 .. On the toolbar, click the Git icon:
 +
@@ -49,4 +49,11 @@ In the file browser, you should now see the notebooks that you cloned from git.
 
 image::workbenches/jupyter-file-browser-2.png[Jupyter File Browser - fraud-detection-notebooks]
 
+
 .Next step
+
+xref:2-03-notebooks.adoc[Running code in a notebook]
+
+or 
+
+xref:2-04-experiment-train.adoc[Training a data model]

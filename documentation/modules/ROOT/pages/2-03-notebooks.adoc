@@ -1,4 +1,4 @@
-= 2.3 Introduction to Jupyter Notebooks
+= 2.3 Running code in a notebook
 
 include::_attributes.adoc[]
 
@@ -14,7 +14,7 @@ This is a cell with some code:
 +
 image::workbenches/cell_code.png[Jupyter Cell Code]
 
-Code cells contain Python code that can be run interactively. You can modify the code and then run it. The code does not run on your computer or in the browser, but directly in the environment that you are connected to, *Red Hat OpenShift Data Science* in our case.
+Code cells contain Python code that can be run interactively. You can modify the code and then run it. The code does not run on your computer or in the browser, but directly in the environment that you are connected to, *{productname-long}* in our case.
 
 You can run a code cell from the notebook interface or from the keyboard:
 
@@ -38,7 +38,7 @@ Now that you have covered the basics, give it a try!
 
 .Prerequisite
 
-* You have imported the workshop files into your Jupyter environment as described in 
+* You have imported the {deliverable} files into your Jupyter environment as described in 
 xref:2-02-jupyter-env.adoc[section 2.2]
 
 .Procedure
@@ -49,7 +49,7 @@ image::workbenches/jupyter-notebook-0.png[Notebook 0]
 . Double-click it to launch the notebook. The notebook opens in a new tab in the content section of the environment. 
 . Experiment by, for example, running the existing cells, adding more cells and creating functions.
 +
-You can do what you want - it's your environment and there is no risk of breaking anything or impacting other users. This environment isolation is also a great advantage brought by OpenShift Data Science.
+You can do what you want - it's your environment and there is no risk of breaking anything or impacting other users. This environment isolation is also a great advantage brought by {productname-short}.
 . Optionally, create a new notebook where the code cells will be run by using a Python 3 kernel:
 .. Create a new notebook by either selecting *File ->New ->Notebook* or by clicking on the icon in the launcher:
 +
@@ -63,3 +63,6 @@ You can use different kernels, with different languages or versions that you can
 
 * If you want to learn more about notebooks, head to https://jupyter.org/[the Jupyter site] .
 
+.Next step
+
+xref:2-04-experiment-train.adoc[Running code in a notebook]

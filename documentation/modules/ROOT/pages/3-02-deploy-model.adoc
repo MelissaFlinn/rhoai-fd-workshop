@@ -2,13 +2,13 @@
 
 include::_attributes.adoc[]
 
-Now that the data model is accessible in storage and saved in a portable `onnx` format, you can use an OpenShift Data Science model server to deploy it as an API.
+Now that the data model is accessible in storage and saved in a portable `onnx` format, you can use an {productname-short} model server to deploy it as an API.
 
-OpenShift Data Science multi-model servers can host several models at once.  You create a new model server and deploy your model to it.
+{productname-short} multi-model servers can host several models at once.  You create a new model server and deploy your model to it.
 
 .Procedure
 
-. In the OpenShift Data Science dashboard, navigate to *Models and model servers*.
+. In the {productname-short} dashboard, navigate to *Models and model servers*.
 . Click *Add server*.
 +
 image::model-serving/ds-project-model-list-add.png[Add Server]
@@ -45,6 +45,7 @@ image::model-serving/ds-project-model-list-name.png[Model name]
 
 image::model-serving/ds-project-model-list-url.png[Model URL]
 
+
 .Next step
 
-Testing the model
+xref:3-03-model-api.adoc[Testing the model API]

@@ -1,46 +1,47 @@
-= 4.1 Workbench Pipeline Editor
+= 4.1 Automating workflows with data science pipelines
 
 include::_attributes.adoc[]
 
-== Automating with Pipelines
+In previous sections of this {deliverable}, you used a notebook to train and save your data model. Optionally, you can automate these tasks by using {productname-long} pipelines. Pipelines offer a way to automate the execution of multiple notebooks and python code, and to schedule them to run. By using pipelines, you can execute long training jobs or retrain your models on a schedule without having to manually run them in a notebook.
 
-As you saw in previous sections, you can use notebooks to train and save your models.  However, you can also automate these tasks using *Red Hat Data Science Pipelines*.  Pipelines offer a way to automate the execution of multiple notebooks, python code, and to schedule them to run.  This way, you can execute long training jobs, or retrain your models on a schedule without having to manually run them in a notebook.
+In this first section, we will create a very simple pipeline. The pipeline will use the notebook that you used in previous sections, to train a model and then save it to S3 storage.
 
-In this first section, we will create a very simple pipeline.  We want to train a model and then save it to S3 storage and we'll use the exact same notebooks from the previous sections to do so.
+Note: The completed pipeline should look like the one in the `6 Train Save.pipeline` file.
 
-We will start with a GUI editor right from your workbench.  The completed pipeline will look like `6 Train Save.pipeline`.
+== Creating a pipeline
 
-== Creating a New Pipeline
-
-Let's create a new pipeline.  Start from you workbench.
-
+. Start from you workbench's JupyterLab environment.
++
 image::pipelines/wb-pipeline-launcher.png[Pipeline Buttons]
 
-* Open the *Launcher* from the *+* button, if the launcher is not visible
-
+. If the launcher is not visible, click *+* to open it.
++
 image::pipelines/wb-launcher-button.png[Launcher Button]
 
-* Click the *Pipeline Editor* to create a new blank pipeline
-
+* Click *Pipeline Editor*.
++
 image::pipelines/wb-pipeline-editor-button.png[Pipeline Editor Button]
 
+Great.  You've created a blank pipeline! 
 
 == Setting Pipeline Properties
 
-Great.  You've created a blank pipeline!  Let's set some properties for the pipeline and any nodes that are created.  We're going to set the default runtime image which will be used to run your notebooks or python code unless otherwise set.
+Set some properties for the pipeline and any nodes that are created. Use the default
+runtime image for when you run your notebook or python code.
+//is there more than one notebook?
 
-* Click the *Open Panel* button in the top right corner of the pipeline editor.
-
+. In the pipeline editor, click  *Open Panel* 
++
 image::pipelines/wb-pipeline-panel-button.png[Open Panel Button]
-
++
 image::pipelines/wb-pipeline-panel-button-loc.png[Open Panel]
 
-* Select the *Pipeline Properties* tab
-
+. Select the *Pipeline Properties* tab.
++
 image::pipelines/wb-pipeline-properties-tab.png[Pipeline Properties Tab]
 
-* In the open pipeline properties panel, scroll down to *Generic Node Defaults* and *Runtime Image*.  Set the value to `Tensorflow with Cuda and Python 3.9 (UBI 9)`
-
+. In the  Pipeline Properties panel, scroll down to *Generic Node Defaults* and *Runtime Image*.  Set the value to `Tensorflow with Cuda and Python 3.9 (UBI 9)`
++
 image::pipelines/wb-pipeline-runtime-image.png[Pipeline Runtime Image0]
 
 == Creating Nodes
@@ -179,7 +180,7 @@ Repeat the procedure for the other keys.
 
 == Running the Pipeline 
 
-Now it's time to upload the pipeline on the cluster itself and run it.  You can do so directly from the pipeline editor.  You can use your own newly created pipeline for this or `6 Train Save.pipeline`.
+Upload the pipeline on the cluster itself and run it.  You can do so directly from the pipeline editor.  You can use your own newly created pipeline for this or `6 Train Save.pipeline`.
 
 * Click the play button in the toolbar of the pipeline editor.
 
@@ -193,12 +194,17 @@ NOTE: If `Data Science Pipeline` is not available as a runtime configuration, yo
 
 image::pipelines/wb-pipeline-run.png[Pipeline Run]
 
-* Return to your data science project and expand the newly created pipeline.
-
+. Return to your data science project and expand the newly created pipeline.
++
 image::pipelines/dsp-pipeline-complete.png[]
 
-From here you can click on the pipeline or the pipeline run and view the pipeline run in progress.
-
+. Click the pipeline or the pipeline run and then view the pipeline run in progress.
++
 image::pipelines/pipeline-run-complete.png[]
 
 The result should be a `models/fraud/model.onnx` file in your S3 bucket which you can serve, just like we manually did in the previous section.
+
+
+.Next steps
+
+xref:4-02-sdk-pipelines.adoc[Automating workflows with data science pipelines]]

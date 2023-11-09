@@ -1,10 +1,10 @@
-= 3.4 Preparing the model for deployment
+= 3.4 Preparing a data model for deployment
 //title TBD
 include::_attributes.adoc[]
 
-After you train a model for inference, you can deploy that model by using the OpenShift Data Science model serving capabilities.
+After you train a model for inference, you can deploy that model by using the {productname-short} model serving capabilities.
 
-Firts, you must move the model from your workbench to your S3 compatible object storage.  You use the data connection that you created earlier in the section xref:1-03-data-connections.adoc[Storage Data Connections].  We'll simply upload the model from a notebook.
+First, you must move the model from your workbench to your S3 compatible object storage.  You use the data connection that you created earlier in the section xref:1-03-data-connections.adoc[Storage Data Connections].  We'll simply upload the model from a notebook.
 
 You also need to convert it to a portable format, onnx.
 //this description needs work
@@ -32,3 +32,5 @@ image::model-serving/jupyter-notebook-2.png[Jupyter Notebook 2]
 When you have completed the notebook isntrcutions, the `models/fraud/model.onnx` file is in your object storage and it is ready for your model server to use.
 
 .Next step
+
+xref:3-02-deploy-model.adoc[Deploying a data model]

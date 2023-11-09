@@ -20,13 +20,13 @@ image::workbenches/ds-project-create-workbench.png[Create workbench button]
 +
 image::workbenches/create-workbench-form-name-desc.png[Workbench name and description, 600]
 +
-Red Hat provides several supported notebook images. In the *Notebook image* section, you can choose one of these images or any custom images that an administrator has set up for you. The *Tensorflow* image which has the necessary libraries for this workshop.
+Red Hat provides several supported notebook images. In the *Notebook image* section, you can choose one of these images or any custom images that an administrator has set up for you. The *Tensorflow* image which has the necessary libraries for this {deliverable}.
 
 . Choose the latest *Tensorflow* image.
 +
 image::workbenches/create-workbench-form-image.png[Workbench image, 600]
 
-. Choose a small deployment and no GPUs. This workshop does not require GPUs.
+. Choose a small deployment and no GPUs. This {deliverable} does not require GPUs.
 +
 image::workbenches/create-workbench-form-size.png[Workbench size,600]
 
@@ -54,4 +54,7 @@ image::workbenches/ds-project-workbench-list-stop.png[Workbench list stop]
 
 image::workbenches/ds-project-workbench-list-edit.png[Workbench list edit]
 
+
 .Next step
+
+xref:2-02-jupyter-env.adoc[Importing the {deliverable} files into the Jupyter environment]

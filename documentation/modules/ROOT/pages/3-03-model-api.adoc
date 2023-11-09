@@ -1,4 +1,4 @@
-= 2.3 Testing the Model API
+= 2.3 Testing the model API
 
 include::_attributes.adoc[]
 
@@ -16,14 +16,13 @@ image::model-serving/ds-project-model-list-url.png[Model URL]
 
 You can communicate directly with this internal service in the same way that an application in your project would. One of the easiest way to do test it, is from a notebook in the same project.
 
-.Next step
 
-Let's go back to the Jupyter environment and try out our new endpoint.  You'll try REST API calls in `4_rest_requests.ipynb` and gRPC requests in `5_grpc_requests.ipynb`.
+* Return to the Jupyter environment and try out your new endpoint.  You'll try REST API calls in `4_rest_requests.ipynb` and gRPC requests in `5_grpc_requests.ipynb`.
 
 image::model-serving/wb-notebook-requests.png[Request Notebooks]
 
+.Next step
 
-
-* 
+xref:4-01-elyra-pipelines.adoc[Testing the model API]
 
 
