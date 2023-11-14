@@ -18,7 +18,7 @@ The {productname-short} dashboard shows the status of any installed and enabled 
 
 . Optionally, click *Explore* to view other available application integrations.
 +
-image::projects/dashboard-enabled.png[Dashboard enabled]
+image::projects/dashboard-explore.png[Dashboard enabled]
 +
 Note: You can navigate back to the OpenShift console in a similar fashion. Click on the application launcher to access the OpenShift console.
 +

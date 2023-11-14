@@ -2,7 +2,7 @@
 
 include::_attributes.adoc[]
 
-The Jupyter environment is a web-based environment, but everything you do inside it is happening on *{productname-long}* and powered by the *OpenShift* cluster. This means that, without having to install and maintain anything on your own computer, and without disposing of lots of local resources like CPU, GPU and RAM, you can conduct your Data Science work in this powerful and stable managed environment.
+The Jupyter environment is a web-based environment, but everything you do inside it happens on *{productname-long}* and powered by the *OpenShift* cluster. This means that, without having to install and maintain anything on your own computer, and without disposing of lots of local resources like CPU, GPU and RAM, you can conduct your Data Science work in this powerful and stable managed environment.
 
 .Prerequisite
 
@@ -10,9 +10,9 @@ The Jupyter environment is a web-based environment, but everything you do inside
 
 .Procedure 
 
-. Click the *Open* link next to your workbench. If prompted, log in and allow the notebook to authorize your user.
+. Click the *Open* link next to your workbench. If prompted, log in and allow the Notebook to authorize your user.
 +
-image::workbenches/ds-project-workbench-open.png[Open Workbench]
+image::workbenches/ds-project-workbench-open.png[Open workbench]
 +
 Your Jupyter environment window opens.
 +
@@ -20,11 +20,11 @@ This file-browser window shows the files and folders that are saved inside your 
 
 . Bring the content of this {deliverable} inside your Jupyter environment:
 
-.. On the toolbar, click the Git icon:
+.. On the toolbar, click the *Git Clone* icon:
 +
-image::workbenches/jupyter-git-icon.png[Git Icon]
+image::workbenches/jupyter-git-icon.png[Git Clone icon, 200]
 
-.. Enter the git *https* URL: 
+.. Enter the following {deliverable} Git *https* URL: 
 +
 [.lines_space]
 [.console-input]
@@ -35,17 +35,17 @@ https://github.com/cfchase/fraud-detection-notebooks.git
 +
 image::workbenches/jupyter-git-modal.png[Git Modal]
 
+.. Check the *Include submodules* option.
+
 .. Click *CLONE*.
 
 .Verification
 
-. Double-click.
-//need to test this - double-click what?
-. Navigate to the newly-created folder, `fraud-detection-notebooks`:
+. Double-click the newly-created folder, `fraud-detection-notebooks`:
 +
 image::workbenches/jupyter-file-browser.png[Jupyter File Browser]
 
-In the file browser, you should now see the notebooks that you cloned from git.
+In the file browser, you should see the notebooks that you cloned from Git.
 
 image::workbenches/jupyter-file-browser-2.png[Jupyter File Browser - fraud-detection-notebooks]
 

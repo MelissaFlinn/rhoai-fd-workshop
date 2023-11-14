@@ -10,28 +10,25 @@ IMPORTANT: The storage buckets that this script creates are *not* meant for prod
 
 NOTE: If you want to connect to your own storage, see xref:1-03-01-data-connections-manual.adoc[Creating data connections to your own S3-compatible object storage].
 
-.Procedures 
+.Prerequisite
 
-== Get your data science project's resource name.
+You must know the OpenShift resource name for your data science project so that you run the provided script in the correct project. To get the project's resource name:
 
-You must know the OpenShift resource name for your data science project so that you run the provided script in the correct project. 
+In the {productname-short} dashboard, select *Data Science Projects* and then hover your cursor over the *?* icon next to the project name. A text box appears with information about the project, including it's resource name:
 
-1. In the {productname-short} dashboard, select *Data Science Projects* to view the list of projects.
-
-2. Hover your cursor over the *?* icon next to the project name. A text box appears with information about the project.
-+
 image::projects/ds-project-list-resource-hover.png[Project list resource name]
 
-3. Make a note of the project's resource name.
+.Procedure
 
-== Run the script from the command line
-
+. You can run the script from the command line or from the OpenShift console.
++
+If you want to run the script from the OpenShift console, skip to the next step.
++
 If you are knowledgeable in OpenShift and can access the cluster from the command line, run the following command:
++
 ----
 oc apply -n <your-project-name/> -f https://github.com/cfchase/fraud-detection-notebooks/raw/main/setup/setup-s3.yaml
 ----
-
-== Run the script from the OpenShift console
 
 . In the {productname-short} dashboard, click the application launcher icon and then select the *OpenShift Console* option.
 +
@@ -39,7 +36,6 @@ image::projects/ds-project-ocp-link.png[OpenShift Console Link]
 
 . In the OpenShift console, click *+* in the top navigation bar.
 +
-//update ocp-console-add-icon.png to highlight the + icon
 image::projects/ocp-console-add-icon.png[Add resources Icon]
  
 . Select your project from the list of projects.

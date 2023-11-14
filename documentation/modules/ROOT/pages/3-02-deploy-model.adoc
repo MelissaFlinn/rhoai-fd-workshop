@@ -1,10 +1,10 @@
-= 2.2 Deploying the data model
+= 3.2 Deploying a data model
 
 include::_attributes.adoc[]
 
-Now that the data model is accessible in storage and saved in a portable `onnx` format, you can use an {productname-short} model server to deploy it as an API.
+Now that the data model is accessible in storage and saved in the portable ONNX format, you can use an {productname-short} model server to deploy it as an API.
 
-{productname-short} multi-model servers can host several models at once.  You create a new model server and deploy your model to it.
+{productname-short} multi-model servers can host several models at once. You create a new model server and deploy your model to it.
 
 .Procedure
 
@@ -17,10 +17,11 @@ image::model-serving/ds-project-model-list-add.png[Add Server]
 
 .. Fill out the *Model server name*, for example `Model Server`.
 .. Select `OpenVINO Model Server`.
-.. Leave the other fields (replicas, size, route, auth) with their default settings.
+.. Leave the other fields with their default settings.
 +
 image::model-serving/create-model-server-form.png[Add Server Form]
-//missing a step - click create?
+
+. Click *Add*.
 
 . In the *Models and model servers* list, next to the new model server, click *Deploy model*.
 +
@@ -38,13 +39,6 @@ image::model-serving/deploy-model-form.png[Deploy model form]
 . Wait for the model to deploy and for the *Status* to show a green checkmark.
 +
 image::model-serving/ds-project-model-list-status.png[Model status]
-
-. Take note of the API Endpoint name and URL. You need this information in the next section when you test the model.
-
-image::model-serving/ds-project-model-list-name.png[Model name]
-
-image::model-serving/ds-project-model-list-url.png[Model URL]
-
 
 .Next step
 

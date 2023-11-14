@@ -4,7 +4,7 @@ include::_attributes.adoc[]
 
 xref:index.adoc[Back to the introduction]
 
-In this section, you prepare your workspace for Section $ xref:4-01-gui-pipelines.adoc[Data Science Pipelines].
+In this section, you prepare your {deliverable} for Section $ xref:4-01-gui-pipelines.adoc[Data Science Pipelines].
 
 NOTE: If you do not intend to complete the pipelines section of the {deliverable} you can skip this step and move on to the next section, xref:2-01-create-workbench.adoc[Create a Workbench]
 

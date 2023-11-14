@@ -1,4 +1,4 @@
-= 2.4 Training a data model
+= 2.4 Training a data model 
 
 include::_attributes.adoc[]
 
