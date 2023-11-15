@@ -67,7 +67,9 @@ image::pipelines/wb-pipeline-node-1.png[Select Node 1, 200]
 +
 image::pipelines/wb-pipeline-node-1-file-dep.png[Add File Dependency, 400]
 
-. Set the value to `data/card_transdata.csv` which contains the data to train your model, and then click *Add*.
+. Set the value to `data/card_transdata.csv` which contains the data to train your model.
+
+. Select the *Include Subdirectories* option and then click *Add*.
 +
 image::pipelines/wb-pipeline-node-1-file-dep-form.png[Set File Dependency Value, 300]
 
@@ -75,7 +77,7 @@ image::pipelines/wb-pipeline-node-1-file-dep-form.png[Set File Dependency Value,
 
 == Create and store the ONNX-formatted output file
 
-In node 1, the notebook creates the `models/fraud/model.onnx` file. In node 2, the notebook uploads that file to the S3 storage bucket. You must set `models/fraud/model.onnx` file as a dependency for both nodes.
+In node 1, the notebook creates the `models/fraud/model.onnx` file. In node 2, the notebook uploads that file to the S3 storage bucket. You must set `models/fraud/model.onnx` file as the output file for both nodes.
 
 . Select node 1 and then select the *Node Properties* tab.
 
@@ -189,4 +191,4 @@ The result should be a `models/fraud/model.onnx` file in your S3 bucket which yo
 
 .Next steps
 
-xref:running-a-pipeline-generated-from-python-code.adoc[Automating workflows with data science pipelines]
+(optional) xref:running-a-pipeline-generated-from-python-code.adoc[Automating workflows with data science pipelines]
