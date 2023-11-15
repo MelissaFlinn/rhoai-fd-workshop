@@ -1,4 +1,5 @@
-= 1.1 Navigating to the {productname-short} dashboard
+[id='navigating-to-the-dashboard_{context}']
+= Navigating to the {productname-short} dashboard
 
 include::_attributes.adoc[]
 
@@ -28,5 +29,5 @@ For now, stay in the {productname-short} dashboard.
 
 .Next step
 
-xref:1-02-project-setup.adoc[Setting up your data science project]
+xref:setting-up-your-data-science-project.adoc[Setting up your data science project]
 

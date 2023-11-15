@@ -1,12 +1,9 @@
-= 1.4 Enabling data science pipelines
+[id='enabling-data-science-pipelines_{context}']
+= Enabling data science pipelines
 
 include::_attributes.adoc[]
 
-xref:index.adoc[Back to the introduction]
-
-In this section, you prepare your {deliverable} for Section $ xref:4-01-gui-pipelines.adoc[Data Science Pipelines].
-
-NOTE: If you do not intend to complete the pipelines section of the {deliverable} you can skip this step and move on to the next section, xref:2-01-create-workbench.adoc[Create a Workbench]
+In this section, you prepare your {deliverable} environment so that you can use data science pipelines.
 
 .Procedure
 
@@ -16,7 +13,9 @@ NOTE: If you do not intend to complete the pipelines section of the {deliverable
 +
 image::projects/ds-project-create-pipeline-server.png[Create pipeline server button]
 
-. Under *Existing data connections*, select *Pipeline Artifacts* from the *Name* list.
+. In the *Configure pipeline server* form, select *Existing data connection*.
+
+. For *Name*, select *Pipeline Artifacts*.
 +
 image::projects/ds-project-create-pipeline-server-form.png[Selecting the Pipeline Artifacts data connection]
 
@@ -28,11 +27,13 @@ image::projects/ds-project-create-pipeline-server-form.png[Selecting the Pipelin
 
 Check the *Pipelines* page. Pipelines are enabled when the *Pipeline server actions* option appears and the *Create pipeline server* button no longer appears.
 
-//update image to show the *Pipeline server actions* option 
 image::projects/ds-project-create-pipeline-server-complete.png[Create pipeline server complete]
-
 
 .Next step
 
-xref:2-01-create-workbench.adoc[Creating a workbench and selecting a Notebook image]
+xref:automating-workflows-with-pipelines.adoc[Automating workflows with data science pipelines]
+
+xref:running-a-pipeline-generated-from-python-code.adoc[Running a data science pipeline generated from Python code]
+
+
 

@@ -1,4 +1,5 @@
-= 2.4 Training a data model 
+[id='training-a-data-model_{context}']
+= Training a data model 
 
 include::_attributes.adoc[]
 
@@ -12,4 +13,4 @@ image::workbenches/jupyter-notebook-1.png[Jupyter Notebook 1]
 
 .Next step
 
-xref:3-01-prepare-model.adoc[Preparing a data model for deployment]
+xref:preparing-a-data-model-for-deployment.adoc[Preparing a data model for deployment]

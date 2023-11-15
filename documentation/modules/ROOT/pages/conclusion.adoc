@@ -15,5 +15,3 @@ You used an example fraud detection model and completed the following tasks:
 * Deployed the model by using {productname-short} model serving.
 * Integrated the model into a real-time fraud detection application.
 * Refined and trained the model by using automated pipelines.
-
-And you'll do all of this without having to install anything on your own computer, thanks to https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-data-science[{productname-long}].

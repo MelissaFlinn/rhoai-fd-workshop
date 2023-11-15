@@ -1,4 +1,5 @@
-= 4.2 Running a data science pipeline generated from Python code
+[id='running-a-pipeline-generated-from-python-code_{context}']
+= Running a data science pipeline generated from Python code
 
 include::_attributes.adoc[]
 

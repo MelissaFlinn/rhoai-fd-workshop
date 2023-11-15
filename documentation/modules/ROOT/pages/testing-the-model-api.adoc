@@ -1,4 +1,5 @@
-= 3.3 Testing the model API
+[id='testing-the-model-api_{context}']
+= Testing the model API
 
 include::_attributes.adoc[]
 
@@ -24,6 +25,7 @@ image::model-serving/wb-notebook-requests.png[Request Notebooks]
 
 .Next step
 
-xref:4-01-gui-pipelines.adoc[Automating workflows with data science pipelines]
-xref:4-02-sdk-pipelines.adoc[Automating workflows with data science pipelines by using Python]
+xref:automating-workflows-with-pipelines.adoc[Automating workflows with data science pipelines]
+
+xref:running-a-pipeline-generated-from-python-code.adoc[Running a data science pipeline generated from Python code]
 

@@ -1,4 +1,5 @@
-= 2.1 Creating a workbench and selecting a Notebook image
+[id='creating-a-workbench_{context}']
+= Creating a workbench and selecting a Notebook image
 
 include::_attributes.adoc[]
 
@@ -6,7 +7,7 @@ A workbench is an instance of your development and experimentation environment. 
 
 .Prerequisite
 
-* You created a `My Storage` data connection xref:1-03-data-connections.adoc[as described in section 1.3].
+* You created a `My Storage` data connection as described in xref:storing-data-with-data-connection.adoc[Storing data with data connections].
 
 .Procedure
 
@@ -55,4 +56,4 @@ image::workbenches/ds-project-workbench-list-edit.png[Workbench list edit]
 
 .Next step
 
-xref:2-02-jupyter-env.adoc[Importing the {deliverable} files into the Jupyter environment]
+xref:importing-files-into-jupyter.adoc[Importing the {deliverable} files into the Jupyter environment]

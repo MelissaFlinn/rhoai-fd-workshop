@@ -1,10 +1,11 @@
-= 1.3.1 Creating data connections to your own S3-compatible object storage
+[id='creating-data-connections-to-storage_{context}']
+== Creating data connections to your own S3-compatible object storage
 
 include::_attributes.adoc[]
 
 xref:index.adoc[Back to the introduction]
 
-NOTE: If you do not have your own s3-compatible storage, or if you want to use a disposable local Minio instance instead, skip this section and follow the steps in xref:1-03-02-data-connections-script.adoc[Running a script to install local object storage buckets and create data connections].
+NOTE: If you do not have your own s3-compatible storage, or if you want to use a disposable local Minio instance instead, skip this section and follow the steps in xref:running-a-script-to-install-storage.adoc[Running a script to install local object storage buckets and create data connections].
 
 .Prerequisite
 
@@ -60,4 +61,4 @@ image::projects/ds-project-dc-list.png[List of project data connections]
 
 .Next step
 
-xref:1-04-enable-pipelines.adoc[Enabling data science pipelines]
+xref:creating-a-workbench.adoc[Creating a workbench]
